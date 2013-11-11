@@ -17,7 +17,6 @@
 		8C55E8D718306EF6006CFAC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C55E8D518306EF6006CFAC9 /* Main.storyboard */; };
 		8C55E8DA18306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E8D818306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld */; };
 		8C55E8DD18306EF6006CFAC9 /* RMMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E8DC18306EF6006CFAC9 /* RMMMasterViewController.m */; };
-		8C55E8E018306EF6006CFAC9 /* RMMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E8DF18306EF6006CFAC9 /* RMMDetailViewController.m */; };
 		8C55E8E218306EF6006CFAC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C55E8E118306EF6006CFAC9 /* Images.xcassets */; };
 		8C55E8E918306EF6006CFAC9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8E818306EF6006CFAC9 /* XCTest.framework */; };
 		8C55E8EA18306EF6006CFAC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C118306EF6006CFAC9 /* Foundation.framework */; };
@@ -25,6 +24,8 @@
 		8C55E8EC18306EF6006CFAC9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C718306EF6006CFAC9 /* CoreData.framework */; };
 		8C55E8F418306EF6006CFAC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C55E8F218306EF6006CFAC9 /* InfoPlist.strings */; };
 		8C55E8F618306EF6006CFAC9 /* CoreDataStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E8F518306EF6006CFAC9 /* CoreDataStuffTests.m */; };
+		8C55E9011830711C006CFAC9 /* RMMFirstViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E9001830711C006CFAC9 /* RMMFirstViewViewController.m */; };
+		8C55E9041830712B006CFAC9 /* RMMSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E9031830712B006CFAC9 /* RMMSecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,14 +54,16 @@
 		8C55E8D918306EF6006CFAC9 /* CoreDataStuff.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStuff.xcdatamodel; sourceTree = "<group>"; };
 		8C55E8DB18306EF6006CFAC9 /* RMMMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMMasterViewController.h; sourceTree = "<group>"; };
 		8C55E8DC18306EF6006CFAC9 /* RMMMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMMMasterViewController.m; sourceTree = "<group>"; };
-		8C55E8DE18306EF6006CFAC9 /* RMMDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMDetailViewController.h; sourceTree = "<group>"; };
-		8C55E8DF18306EF6006CFAC9 /* RMMDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMMDetailViewController.m; sourceTree = "<group>"; };
 		8C55E8E118306EF6006CFAC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C55E8E718306EF6006CFAC9 /* CoreDataStuffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataStuffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C55E8E818306EF6006CFAC9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8C55E8F118306EF6006CFAC9 /* CoreDataStuffTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreDataStuffTests-Info.plist"; sourceTree = "<group>"; };
 		8C55E8F318306EF6006CFAC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C55E8F518306EF6006CFAC9 /* CoreDataStuffTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStuffTests.m; sourceTree = "<group>"; };
+		8C55E8FF1830711C006CFAC9 /* RMMFirstViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMFirstViewViewController.h; sourceTree = "<group>"; };
+		8C55E9001830711C006CFAC9 /* RMMFirstViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMFirstViewViewController.m; sourceTree = "<group>"; };
+		8C55E9021830712B006CFAC9 /* RMMSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMSecondViewController.h; sourceTree = "<group>"; };
+		8C55E9031830712B006CFAC9 /* RMMSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMSecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,12 +129,14 @@
 				8C55E8D218306EF6006CFAC9 /* RMMAppDelegate.h */,
 				8C55E8D318306EF6006CFAC9 /* RMMAppDelegate.m */,
 				8C55E8D518306EF6006CFAC9 /* Main.storyboard */,
-				8C55E8DB18306EF6006CFAC9 /* RMMMasterViewController.h */,
-				8C55E8DC18306EF6006CFAC9 /* RMMMasterViewController.m */,
-				8C55E8DE18306EF6006CFAC9 /* RMMDetailViewController.h */,
-				8C55E8DF18306EF6006CFAC9 /* RMMDetailViewController.m */,
 				8C55E8E118306EF6006CFAC9 /* Images.xcassets */,
 				8C55E8D818306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld */,
+				8C55E8FF1830711C006CFAC9 /* RMMFirstViewViewController.h */,
+				8C55E9001830711C006CFAC9 /* RMMFirstViewViewController.m */,
+				8C55E9021830712B006CFAC9 /* RMMSecondViewController.h */,
+				8C55E9031830712B006CFAC9 /* RMMSecondViewController.m */,
+				8C55E8DB18306EF6006CFAC9 /* RMMMasterViewController.h */,
+				8C55E8DC18306EF6006CFAC9 /* RMMMasterViewController.m */,
 				8C55E8CA18306EF6006CFAC9 /* Supporting Files */,
 			);
 			path = CoreDataStuff;
@@ -266,9 +271,10 @@
 			files = (
 				8C55E8D018306EF6006CFAC9 /* main.m in Sources */,
 				8C55E8D418306EF6006CFAC9 /* RMMAppDelegate.m in Sources */,
+				8C55E9011830711C006CFAC9 /* RMMFirstViewViewController.m in Sources */,
 				8C55E8DA18306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld in Sources */,
-				8C55E8E018306EF6006CFAC9 /* RMMDetailViewController.m in Sources */,
 				8C55E8DD18306EF6006CFAC9 /* RMMMasterViewController.m in Sources */,
+				8C55E9041830712B006CFAC9 /* RMMSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +483,7 @@
 				8C55E8FB18306EF6006CFAC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C55E8FC18306EF6006CFAC9 /* Build configuration list for PBXNativeTarget "CoreDataStuffTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +492,7 @@
 				8C55E8FE18306EF6006CFAC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
