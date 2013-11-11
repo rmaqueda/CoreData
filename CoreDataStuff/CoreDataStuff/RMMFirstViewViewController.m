@@ -13,6 +13,7 @@
 @end
 
 @implementation RMMFirstViewViewController
+//@synthesize nameText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +34,36 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([self.nameText.text isEqualToString:@""]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Name"
+                                                        message:@"Name empty is not valid"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+
+    
+    
+    
+//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+//        [[segue destinationViewController] setDetailItem:object];
+//    }
 }
 
 @end

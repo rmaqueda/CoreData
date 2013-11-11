@@ -10,6 +10,9 @@
 
 @interface RMMSecondViewController : UIViewController
 
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @property (weak, nonatomic) IBOutlet UITextField *surnameText;
 - (IBAction)saveButtom:(id)sender;
 
