@@ -10,8 +10,7 @@
 
 @interface RMMFirstViewViewController : UIViewController
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong,nonatomic) NSManagedObjectContext *context;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 

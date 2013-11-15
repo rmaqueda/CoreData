@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C4430AC1835D14F0091A571 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4430AB1835D14F0091A571 /* Event.m */; };
 		8C55E8C218306EF6006CFAC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C118306EF6006CFAC9 /* Foundation.framework */; };
 		8C55E8C418306EF6006CFAC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C318306EF6006CFAC9 /* CoreGraphics.framework */; };
 		8C55E8C618306EF6006CFAC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C518306EF6006CFAC9 /* UIKit.framework */; };
@@ -16,7 +17,6 @@
 		8C55E8D418306EF6006CFAC9 /* RMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E8D318306EF6006CFAC9 /* RMMAppDelegate.m */; };
 		8C55E8D718306EF6006CFAC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C55E8D518306EF6006CFAC9 /* Main.storyboard */; };
 		8C55E8DA18306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E8D818306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld */; };
-		8C55E8DD18306EF6006CFAC9 /* RMMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E8DC18306EF6006CFAC9 /* RMMMasterViewController.m */; };
 		8C55E8E218306EF6006CFAC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C55E8E118306EF6006CFAC9 /* Images.xcassets */; };
 		8C55E8E918306EF6006CFAC9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8E818306EF6006CFAC9 /* XCTest.framework */; };
 		8C55E8EA18306EF6006CFAC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C118306EF6006CFAC9 /* Foundation.framework */; };
@@ -39,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C4430AA1835D14F0091A571 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		8C4430AB1835D14F0091A571 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		8C55E8BE18306EF6006CFAC9 /* CoreDataStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C55E8C118306EF6006CFAC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C55E8C318306EF6006CFAC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,8 +54,6 @@
 		8C55E8D318306EF6006CFAC9 /* RMMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMMAppDelegate.m; sourceTree = "<group>"; };
 		8C55E8D618306EF6006CFAC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C55E8D918306EF6006CFAC9 /* CoreDataStuff.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStuff.xcdatamodel; sourceTree = "<group>"; };
-		8C55E8DB18306EF6006CFAC9 /* RMMMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMMasterViewController.h; sourceTree = "<group>"; };
-		8C55E8DC18306EF6006CFAC9 /* RMMMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMMMasterViewController.m; sourceTree = "<group>"; };
 		8C55E8E118306EF6006CFAC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C55E8E718306EF6006CFAC9 /* CoreDataStuffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataStuffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C55E8E818306EF6006CFAC9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -92,6 +92,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C4430AD1835D1590091A571 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C55E8D818306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld */,
+				8C4430AA1835D14F0091A571 /* Event.h */,
+				8C4430AB1835D14F0091A571 /* Event.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8C4430AF1835D1760091A571 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C55E8D518306EF6006CFAC9 /* Main.storyboard */,
+				8C55E8FF1830711C006CFAC9 /* RMMFirstViewViewController.h */,
+				8C55E9001830711C006CFAC9 /* RMMFirstViewViewController.m */,
+				8C55E9021830712B006CFAC9 /* RMMSecondViewController.h */,
+				8C55E9031830712B006CFAC9 /* RMMSecondViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		8C55E8B518306EF6006CFAC9 = {
 			isa = PBXGroup;
 			children = (
@@ -128,16 +150,10 @@
 			children = (
 				8C55E8D218306EF6006CFAC9 /* RMMAppDelegate.h */,
 				8C55E8D318306EF6006CFAC9 /* RMMAppDelegate.m */,
-				8C55E8D518306EF6006CFAC9 /* Main.storyboard */,
-				8C55E8E118306EF6006CFAC9 /* Images.xcassets */,
-				8C55E8D818306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld */,
-				8C55E8FF1830711C006CFAC9 /* RMMFirstViewViewController.h */,
-				8C55E9001830711C006CFAC9 /* RMMFirstViewViewController.m */,
-				8C55E9021830712B006CFAC9 /* RMMSecondViewController.h */,
-				8C55E9031830712B006CFAC9 /* RMMSecondViewController.m */,
-				8C55E8DB18306EF6006CFAC9 /* RMMMasterViewController.h */,
-				8C55E8DC18306EF6006CFAC9 /* RMMMasterViewController.m */,
+				8C4430AF1835D1760091A571 /* Views */,
+				8C4430AD1835D1590091A571 /* Model */,
 				8C55E8CA18306EF6006CFAC9 /* Supporting Files */,
+				8C55E8E118306EF6006CFAC9 /* Images.xcassets */,
 			);
 			path = CoreDataStuff;
 			sourceTree = "<group>";
@@ -273,8 +289,8 @@
 				8C55E8D418306EF6006CFAC9 /* RMMAppDelegate.m in Sources */,
 				8C55E9011830711C006CFAC9 /* RMMFirstViewViewController.m in Sources */,
 				8C55E8DA18306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld in Sources */,
-				8C55E8DD18306EF6006CFAC9 /* RMMMasterViewController.m in Sources */,
 				8C55E9041830712B006CFAC9 /* RMMSecondViewController.m in Sources */,
+				8C4430AC1835D14F0091A571 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,30 +7,26 @@
 //
 
 #import "RMMSecondViewController.h"
+#import "Event.h"
 
 @interface RMMSecondViewController ()
 
 @end
 
 @implementation RMMSecondViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-
+@synthesize event;
 
 - (IBAction)saveButtom:(id)sender {
+    
+    event.surname = self.surnameText.text;
+    [self.context save:nil];
+    
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+    fetch.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    
+    NSArray *results = [self.context executeFetchRequest:fetch error:nil];
+    NSLog(@"%@", results);
 }
+
+
 @end

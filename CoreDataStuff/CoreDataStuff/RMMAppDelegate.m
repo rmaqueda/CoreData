@@ -7,8 +7,7 @@
 //
 
 #import "RMMAppDelegate.h"
-
-#import "RMMMasterViewController.h"
+#import "RMMFirstViewViewController.h"
 
 @implementation RMMAppDelegate
 
@@ -18,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
     return YES;
 }
 							
