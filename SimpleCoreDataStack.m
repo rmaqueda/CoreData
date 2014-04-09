@@ -1,6 +1,5 @@
 //
-//  AGTSimpleCoreDataStack.m
-//  everpobre
+//  SimpleCoreDataStack.m
 //
 //  Created by Fernando Rodríguez Romero on 12/12/13.
 //  Copyright (c) 2013 Agbo. All rights reserved.
@@ -8,9 +7,9 @@
 
 
 @import CoreData;
-#import "AGTSimpleCoreDataStack.h"
+#import "SimpleCoreDataStack.h"
 
-@interface AGTSimpleCoreDataStack ()
+@interface SimpleCoreDataStack ()
 
 @property (strong, nonatomic, readonly) NSManagedObjectModel *model;
 @property (strong, nonatomic, readonly) NSPersistentStoreCoordinator *storeCoordinator;
@@ -19,7 +18,7 @@
 
 @end
 
-@implementation AGTSimpleCoreDataStack
+@implementation SimpleCoreDataStack
 
 #pragma mark -  Properties
 // When using a readonly property with a custom getter, auto-synthesize
@@ -31,8 +30,8 @@
 @synthesize context = _context;
 
 
-- (NSManagedObjectContext *)context
-{
+- (NSManagedObjectContext *)context {
+    
     if (_context == nil) {
         _context = [[NSManagedObjectContext alloc] init];
         _context.persistentStoreCoordinator = self.storeCoordinator;
@@ -41,13 +40,14 @@
     return _context;
 }
 
-- (NSPersistentStoreCoordinator *)storeCoordinator
-{
+- (NSPersistentStoreCoordinator *)storeCoordinator {
+    
     if (_storeCoordinator == nil) {
         _storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
         
         
         NSError *err = nil;
+        
         if (![_storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                              configuration:nil
                                                        URL:self.dbURL
@@ -56,11 +56,12 @@
             // Something went really wrong...
             // Send a notification and return nil
             NSNotification *note = [NSNotification
-                                    notificationWithName:[AGTSimpleCoreDataStack persistentStoreCoordinatorErrorNotificationName]
+                                    notificationWithName:[SimpleCoreDataStack persistentStoreCoordinatorErrorNotificationName]
                                     object:self
                                     userInfo:@{@"error" : err}];
             [[NSNotificationCenter defaultCenter] postNotification:note];
             NSLog(@"Error while adding a Store: %@", err);
+            
             return nil;
         }
     }
@@ -68,8 +69,7 @@
     return _storeCoordinator;
 }
 
-- (NSManagedObjectModel *)model
-{
+- (NSManagedObjectModel *)model {
     if (_model == nil) {
         _model = [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
     }
@@ -80,19 +80,17 @@
 
 #pragma mark - Class Methods
 
-+ (NSString *)persistentStoreCoordinatorErrorNotificationName
-{
++ (NSString *)persistentStoreCoordinatorErrorNotificationName {
+    
     return @"persistentStoreCoordinatorErrorNotificationName";
 }
 
 // Returns the URL to the application's Documents directory.
-+ (NSURL *)applicationDocumentsDirectory
-{
++ (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-+ (AGTSimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName databaseFilename:(NSString*) aDBName
-{
++ (SimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName databaseFilename:(NSString*) aDBName {
     NSURL *url = nil;
     
     if (aDBName) {
@@ -102,26 +100,24 @@
         url = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:aModelName];
     }
     
-    return [self coreDataStackWithModelName:aModelName
-                                databaseURL:url];
+    return [self coreDataStackWithModelName:aModelName databaseURL:url];
 }
 
-+ (AGTSimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName
-{
++ (SimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName {
+    
     return [self coreDataStackWithModelName:aModelName databaseFilename:nil];
 }
 
-+ (AGTSimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName databaseURL:(NSURL *)aDBURL
-{
++ (SimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName databaseURL:(NSURL *)aDBURL {
+    
     return [[self alloc] initWithModelName:aModelName databaseURL:aDBURL];
 }
 
 
 #pragma mark - Init
 
-- (id)initWithModelName:(NSString *)aModelName
-            databaseURL:(NSURL *)aDBURL
-{
+- (id)initWithModelName:(NSString *)aModelName databaseURL:(NSURL *)aDBURL {
+    
     if (self = [super init]) {
         self.modelURL = [[NSBundle mainBundle] URLForResource:aModelName withExtension:@"momd"];
         self.dbURL = aDBURL;
@@ -133,14 +129,15 @@
 
 #pragma mark - Others
 
-- (void)zapAllData
-{
+- (void)zapAllData {
     NSError *err = nil;
+    
     for (NSPersistentStore *store in self.storeCoordinator.persistentStores) {
         if (![self.storeCoordinator removePersistentStore:store error:&err]) {
             NSLog(@"Error while removing store %@ from store coordinator %@", store, self.storeCoordinator);
         }
     }
+    
     if (![[NSFileManager defaultManager] removeItemAtURL:self.dbURL error:&err]) {
         NSLog(@"Error removing %@: %@", self.dbURL, err);
     }
@@ -157,17 +154,17 @@
 }
 
 
-- (void)saveWithErrorBlock:(void(^)(NSError *error))errorBlock
-{
+- (void)saveWithErrorBlock:(void(^)(NSError *error))errorBlock {
     NSError *err = nil;
     // If a context is nil, saving it should also be considered an
     // error, as being nil might be the result of a previous error
     // while creating the db.
+    
     if (!_context) {
-        err = [NSError errorWithDomain:@"AGTSimpleCoreDataStack"
+        err = [NSError errorWithDomain:@"SimpleCoreDataStack"
                                   code:1
                               userInfo:@{NSLocalizedDescriptionKey :
-                                             @"Attempted to save a nil NSManagedObjectContext. This AGTSimpleCoreDataStack has no context - probably there was an earlier error trying to access the CoreData database file."}];
+                                             @"Attempted to save a nil NSManagedObjectContext. This SimpleCoreDataStack has no context - probably there was an earlier error trying to access the CoreData database file."}];
         errorBlock(err);
         
     }
@@ -178,17 +175,16 @@
     }
 }
 
--(NSArray *)executeRequest:(NSFetchRequest *)request
-                 withError:(void(^)(NSError *error))errorBlock{
+-(NSArray *)executeRequest:(NSFetchRequest *)request withError:(void(^)(NSError *error))errorBlock {
     
     NSError *err = nil;
     NSArray *results = nil;
     
     if (!_context) {
-        err = [NSError errorWithDomain:@"AGTSimpleCoreDataStack"
+        err = [NSError errorWithDomain:@"SimpleCoreDataStack"
                                   code:1
                               userInfo:@{NSLocalizedDescriptionKey :
-                                             @"Attempted to search a nil NSManagedObjectContext. This AGTSimpleCoreDataStack has no context - probably there was an earlier error trying to access the CoreData database file."}];
+                                             @"Attempted to search a nil NSManagedObjectContext. This SimpleCoreDataStack has no context - probably there was an earlier error trying to access the CoreData database file."}];
         errorBlock(err);
         
     }else{
@@ -199,7 +195,7 @@
             errorBlock(err);
         }
     }
-
+    
     return results;
 }
 @end
