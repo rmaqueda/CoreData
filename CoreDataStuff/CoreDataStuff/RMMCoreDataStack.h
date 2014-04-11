@@ -22,4 +22,7 @@
 - (void)saveWithErrorBlock:(void(^)(NSError *error))errorBlock;
 - (NSArray *)executeRequest:(NSFetchRequest *)request withError:(void(^)(NSError *error))errorBlock;
 
+- (void)loadInittialData;
+
+
 @end
