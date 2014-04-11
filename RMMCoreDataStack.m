@@ -1,15 +1,13 @@
 //
-//  SimpleCoreDataStack.m
+//  RMMCoreDataStack.m
 //
-//  Created by Fernando Rodríguez Romero on 12/12/13.
+//  Created by Ricardo Maqueda on 04/11/14.
 //  Copyright (c) 2013 Agbo. All rights reserved.
 //
 
+#import "RMMCoreDataStack.h"
 
-@import CoreData;
-#import "SimpleCoreDataStack.h"
-
-@interface SimpleCoreDataStack ()
+@interface RMMCoreDataStack ()
 
 @property (strong, nonatomic, readonly) NSManagedObjectModel *model;
 @property (strong, nonatomic, readonly) NSPersistentStoreCoordinator *storeCoordinator;
@@ -18,7 +16,7 @@
 
 @end
 
-@implementation SimpleCoreDataStack
+@implementation RMMCoreDataStack
 
 #pragma mark -  Properties
 // When using a readonly property with a custom getter, auto-synthesize
@@ -56,7 +54,7 @@
             // Something went really wrong...
             // Send a notification and return nil
             NSNotification *note = [NSNotification
-                                    notificationWithName:[SimpleCoreDataStack persistentStoreCoordinatorErrorNotificationName]
+                                    notificationWithName:[RMMCoreDataStack persistentStoreCoordinatorErrorNotificationName]
                                     object:self
                                     userInfo:@{@"error" : err}];
             [[NSNotificationCenter defaultCenter] postNotification:note];
@@ -90,7 +88,7 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-+ (SimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName databaseFilename:(NSString*) aDBName {
++ (RMMCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName databaseFilename:(NSString*) aDBName {
     NSURL *url = nil;
     
     if (aDBName) {
@@ -103,12 +101,12 @@
     return [self coreDataStackWithModelName:aModelName databaseURL:url];
 }
 
-+ (SimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName {
++ (RMMCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName {
     
     return [self coreDataStackWithModelName:aModelName databaseFilename:nil];
 }
 
-+ (SimpleCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName databaseURL:(NSURL *)aDBURL {
++ (RMMCoreDataStack *)coreDataStackWithModelName:(NSString *)aModelName databaseURL:(NSURL *)aDBURL {
     
     return [[self alloc] initWithModelName:aModelName databaseURL:aDBURL];
 }
@@ -161,7 +159,7 @@
     // while creating the db.
     
     if (!_context) {
-        err = [NSError errorWithDomain:@"SimpleCoreDataStack"
+        err = [NSError errorWithDomain:@"RMMCoreDataStack"
                                   code:1
                               userInfo:@{NSLocalizedDescriptionKey :
                                              @"Attempted to save a nil NSManagedObjectContext. This SimpleCoreDataStack has no context - probably there was an earlier error trying to access the CoreData database file."}];
@@ -181,7 +179,7 @@
     NSArray *results = nil;
     
     if (!_context) {
-        err = [NSError errorWithDomain:@"SimpleCoreDataStack"
+        err = [NSError errorWithDomain:@"RMMCoreDataStack"
                                   code:1
                               userInfo:@{NSLocalizedDescriptionKey :
                                              @"Attempted to search a nil NSManagedObjectContext. This SimpleCoreDataStack has no context - probably there was an earlier error trying to access the CoreData database file."}];

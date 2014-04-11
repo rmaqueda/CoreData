@@ -1,13 +1,14 @@
 //
-//  SimpleCoreDataStack.h
+//  RMMCoreDataStack.m
 //
-//  Created by Fernando Rodríguez Romero on 12/12/13.
+//  Created by Ricardo Maqueda on 04/11/14.
 //  Copyright (c) 2013 Agbo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+@import CoreData;
 
-@interface SimpleCoreDataStack : NSObject
+@interface RMMCoreDataStack : NSObject
 
 @property (strong, nonatomic, readonly) NSManagedObjectContext *context;
 
