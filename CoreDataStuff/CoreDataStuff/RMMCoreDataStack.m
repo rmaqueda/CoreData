@@ -229,6 +229,16 @@
     
     
     
+    //Otro ejemplo
+    
+    NSError* err = nil;
+    NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"Banks" ofType:@"json"];
+    NSArray* Banks = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+                                                     options:kNilOptions
+                                                       error:&err];
+    NSLog(@"Imported Banks: %@", Banks);
+    
+    
     
 }
 

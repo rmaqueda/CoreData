@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C3CD74118F7CC9A0010B4EF /* RMMCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CD74018F7CC990010B4EF /* RMMCoreDataStack.m */; };
+		8C3CD74418F7E37F0010B4EF /* dataSet.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8C3CD74318F7E37F0010B4EF /* dataSet.json */; };
 		8C4430AC1835D14F0091A571 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4430AB1835D14F0091A571 /* Event.m */; };
 		8C55E8C218306EF6006CFAC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C118306EF6006CFAC9 /* Foundation.framework */; };
 		8C55E8C418306EF6006CFAC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C318306EF6006CFAC9 /* CoreGraphics.framework */; };
@@ -39,9 +40,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8C3CD74218F7E3380010B4EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				8C3CD74418F7E37F0010B4EF /* dataSet.json in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8C3CD73F18F7CC990010B4EF /* RMMCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMCoreDataStack.h; sourceTree = "<group>"; };
 		8C3CD74018F7CC990010B4EF /* RMMCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMCoreDataStack.m; sourceTree = "<group>"; };
+		8C3CD74318F7E37F0010B4EF /* dataSet.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dataSet.json; sourceTree = "<group>"; };
 		8C4430AA1835D14F0091A571 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		8C4430AB1835D14F0091A571 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		8C55E8BE18306EF6006CFAC9 /* CoreDataStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +137,7 @@
 		8C55E8B518306EF6006CFAC9 = {
 			isa = PBXGroup;
 			children = (
+				8C3CD74318F7E37F0010B4EF /* dataSet.json */,
 				8C55E8C918306EF6006CFAC9 /* CoreDataStuff */,
 				8C55E8EF18306EF6006CFAC9 /* CoreDataStuffTests */,
 				8C55E8C018306EF6006CFAC9 /* Frameworks */,
@@ -202,6 +218,7 @@
 				8C55E8BA18306EF6006CFAC9 /* Sources */,
 				8C55E8BB18306EF6006CFAC9 /* Frameworks */,
 				8C55E8BC18306EF6006CFAC9 /* Resources */,
+				8C3CD74218F7E3380010B4EF /* CopyFiles */,
 			);
 			buildRules = (
 			);
