@@ -113,9 +113,9 @@
 		8C4430AD1835D1590091A571 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8C55E8D818306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld */,
 				8C3CD73F18F7CC990010B4EF /* RMMCoreDataStack.h */,
 				8C3CD74018F7CC990010B4EF /* RMMCoreDataStack.m */,
-				8C55E8D818306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld */,
 				8C4430AA1835D14F0091A571 /* Event.h */,
 				8C4430AB1835D14F0091A571 /* Event.m */,
 			);
