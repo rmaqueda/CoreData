@@ -10,7 +10,9 @@
 
 @interface RMMFirstViewViewController : UIViewController
 
-@property (strong,nonatomic) NSManagedObjectContext *context;
+
 @property (weak, nonatomic) IBOutlet UILabel *personasCount;
+
+
 
 @end

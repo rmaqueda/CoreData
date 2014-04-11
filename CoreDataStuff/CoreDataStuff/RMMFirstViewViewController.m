@@ -9,6 +9,7 @@
 #import "RMMFirstViewViewController.h"
 #import "RMMSecondViewController.h"
 #import "RMMPerson.h"
+#import "RMMDataModel.h"
 
 @interface RMMFirstViewViewController ()
 
@@ -17,14 +18,19 @@
 @implementation RMMFirstViewViewController
 
 -(void)viewWillAppear:(BOOL)animated{
-    
-    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:[RMMPerson entityName]];
-    NSArray *coreDataList = [self.context executeFetchRequest:req error:nil];
-    NSLog(@" Elemento en CoreData: %lu", [coreDataList count]);
 
+    NSManagedObjectContext *context = [[RMMDataModel sharedInstance] managedObjectContext];
+    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:[RMMPerson entityName]];
+    NSArray *coreDataList = [context executeFetchRequest:req error:nil];
     self.personasCount.text = [NSString stringWithFormat:@"%lu", [coreDataList count]];
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"secondVC"]) {
+        RMMSecondViewController *secondVC = segue.destinationViewController;
+        //secondVC.context = self.context;
+    }
+}
 
 @end

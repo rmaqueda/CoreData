@@ -12,6 +12,6 @@
 @interface RMMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) RMMCoreDataStack *model;
+
 
 @end

@@ -29,6 +29,7 @@
 		8C55E8F618306EF6006CFAC9 /* CoreDataStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E8F518306EF6006CFAC9 /* CoreDataStuffTests.m */; };
 		8C55E9011830711C006CFAC9 /* RMMFirstViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E9001830711C006CFAC9 /* RMMFirstViewViewController.m */; };
 		8C55E9041830712B006CFAC9 /* RMMSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C55E9031830712B006CFAC9 /* RMMSecondViewController.m */; };
+		8CA68DAF18F8637300823703 /* RMMDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA68DAE18F8637300823703 /* RMMDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		8C55E9001830711C006CFAC9 /* RMMFirstViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMFirstViewViewController.m; sourceTree = "<group>"; };
 		8C55E9021830712B006CFAC9 /* RMMSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMSecondViewController.h; sourceTree = "<group>"; };
 		8C55E9031830712B006CFAC9 /* RMMSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMSecondViewController.m; sourceTree = "<group>"; };
+		8CA68DAD18F8637300823703 /* RMMDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMDataModel.h; sourceTree = "<group>"; };
+		8CA68DAE18F8637300823703 /* RMMDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 		8C4430AD1835D1590091A571 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8CA68DAD18F8637300823703 /* RMMDataModel.h */,
+				8CA68DAE18F8637300823703 /* RMMDataModel.m */,
 				8C55E8D818306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld */,
 				8C3CD74718F7E62F0010B4EF /* RMMPerson.h */,
 				8C3CD74818F7E62F0010B4EF /* RMMPerson.m */,
@@ -313,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C55E8D018306EF6006CFAC9 /* main.m in Sources */,
+				8CA68DAF18F8637300823703 /* RMMDataModel.m in Sources */,
 				8C3CD74918F7E62F0010B4EF /* _RMMPerson.m in Sources */,
 				8C55E8D418306EF6006CFAC9 /* RMMAppDelegate.m in Sources */,
 				8C55E9011830711C006CFAC9 /* RMMFirstViewViewController.m in Sources */,

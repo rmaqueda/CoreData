@@ -10,6 +10,7 @@
 #import "RMMFirstViewViewController.h"
 #import "RMMCoreDataStack.h"
 #import "RMMPerson.h"
+#import "RMMDataModel.h"
 
 @implementation RMMAppDelegate
 
@@ -17,14 +18,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.model = [RMMCoreDataStack coreDataStackWithModelName:@"CoreDataStuff"];
-    [self loadInittialData];
-    
-    // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    RMMFirstViewViewController *firstVC = (RMMFirstViewViewController *)navigationController.topViewController;
-    firstVC.context = self.model.context;
+//    self.model = [RMMCoreDataStack coreDataStackWithModelName:@"CoreDataStuff"];
+//    [self loadInittialData];
+//    
+//    // Override point for customization after application launch.
+//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+//    RMMFirstViewViewController *firstVC = (RMMFirstViewViewController *)navigationController.topViewController;
+//    firstVC.context = self.model.context;
 
+    
+    NSManagedObjectContext *context = [[RMMDataModel sharedInstance] managedObjectContext];
+    if (context) {
+        NSLog(@"Context is ready!");
+        //[self loadInittialData];
+    }
+    
+    [[RMMDataModel sharedInstance] zapAllData];
+    
+    NSManagedObjectContext *context2 = [[RMMDataModel sharedInstance] managedObjectContext];
+    
+    
+    
+    if (context2) {
+        NSLog(@"Context is ready!");
+        [self loadInittialData];
+    }
+    
     return YES;
 }
 							
@@ -59,6 +78,9 @@
 
 - (void)loadInittialData {
 
+    
+    NSManagedObjectContext *context = [[RMMDataModel sharedInstance] managedObjectContext];
+
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"dataSet" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSError* error = nil;
@@ -70,25 +92,28 @@
     NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:[RMMPerson entityName]];
     [req setPredicate: [NSPredicate predicateWithFormat:@"(firstName IN %@)", firstNames]];
     [req setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey: @"firstName" ascending:YES]]];
-    NSArray *coreDataList = [self.model.context executeFetchRequest:req error:nil];
+    NSArray *coreDataList = [context executeFetchRequest:req error:nil];
     NSLog(@" Elemento en CoreData: %lu", [coreDataList count]);
 
     if ([coreDataList count] < [jsonList count] ) {
-        [self.model zapAllData];
+        //[[RMMDataModel sharedInstance] zapAllData];
         [jsonList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            RMMPerson *person = [NSEntityDescription insertNewObjectForEntityForName:[RMMPerson entityName] inManagedObjectContext:self.model.context];
+            RMMPerson *person = [NSEntityDescription insertNewObjectForEntityForName:[RMMPerson entityName] inManagedObjectContext:context];
             person.firstName = [obj objectForKey:@"firstName"];
             person.lastName = [obj objectForKey:@"lastName"];
             person.email = [obj objectForKey:@"email"];
-            //person.lastUpdate = [obj objectForKey:@"lastUpdate"];
         }];
     } else {
         
     }
     
-    [self.model saveWithErrorBlock:^(NSError *error) {
+    [[RMMDataModel sharedInstance] saveWithErrorBlock:^(NSError *error) {
         NSLog(@"Error al salvar datos");
     }];
+
+    NSArray *coreDataList2 = [context executeFetchRequest:req error:nil];
+    NSLog(@" Elemento en CoreData: %lu", [coreDataList2 count]);
+
 }
 
 @end
