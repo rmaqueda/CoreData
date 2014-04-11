@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8C3CD74118F7CC9A0010B4EF /* RMMCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CD74018F7CC990010B4EF /* RMMCoreDataStack.m */; };
-		8C3CD74418F7E37F0010B4EF /* dataSet.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8C3CD74318F7E37F0010B4EF /* dataSet.json */; };
 		8C3CD74918F7E62F0010B4EF /* _RMMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CD74618F7E62F0010B4EF /* _RMMPerson.m */; };
 		8C3CD74A18F7E62F0010B4EF /* RMMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3CD74818F7E62F0010B4EF /* RMMPerson.m */; };
-		8C4430AC1835D14F0091A571 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4430AB1835D14F0091A571 /* Event.m */; };
+		8C3CD74C18F839110010B4EF /* dataSet.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C3CD74B18F839110010B4EF /* dataSet.json */; };
 		8C55E8C218306EF6006CFAC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C118306EF6006CFAC9 /* Foundation.framework */; };
 		8C55E8C418306EF6006CFAC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C318306EF6006CFAC9 /* CoreGraphics.framework */; };
 		8C55E8C618306EF6006CFAC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C55E8C518306EF6006CFAC9 /* UIKit.framework */; };
@@ -49,7 +48,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				8C3CD74418F7E37F0010B4EF /* dataSet.json in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +56,11 @@
 /* Begin PBXFileReference section */
 		8C3CD73F18F7CC990010B4EF /* RMMCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMCoreDataStack.h; sourceTree = "<group>"; };
 		8C3CD74018F7CC990010B4EF /* RMMCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMCoreDataStack.m; sourceTree = "<group>"; };
-		8C3CD74318F7E37F0010B4EF /* dataSet.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dataSet.json; sourceTree = "<group>"; };
 		8C3CD74518F7E62F0010B4EF /* _RMMPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _RMMPerson.h; sourceTree = "<group>"; };
 		8C3CD74618F7E62F0010B4EF /* _RMMPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RMMPerson.m; sourceTree = "<group>"; };
 		8C3CD74718F7E62F0010B4EF /* RMMPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMPerson.h; sourceTree = "<group>"; };
 		8C3CD74818F7E62F0010B4EF /* RMMPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMPerson.m; sourceTree = "<group>"; };
-		8C4430AA1835D14F0091A571 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		8C4430AB1835D14F0091A571 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		8C3CD74B18F839110010B4EF /* dataSet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dataSet.json; sourceTree = "<group>"; };
 		8C55E8BE18306EF6006CFAC9 /* CoreDataStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C55E8C118306EF6006CFAC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C55E8C318306EF6006CFAC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,8 +122,6 @@
 				8C3CD74618F7E62F0010B4EF /* _RMMPerson.m */,
 				8C3CD73F18F7CC990010B4EF /* RMMCoreDataStack.h */,
 				8C3CD74018F7CC990010B4EF /* RMMCoreDataStack.m */,
-				8C4430AA1835D14F0091A571 /* Event.h */,
-				8C4430AB1835D14F0091A571 /* Event.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -147,7 +141,6 @@
 		8C55E8B518306EF6006CFAC9 = {
 			isa = PBXGroup;
 			children = (
-				8C3CD74318F7E37F0010B4EF /* dataSet.json */,
 				8C55E8C918306EF6006CFAC9 /* CoreDataStuff */,
 				8C55E8EF18306EF6006CFAC9 /* CoreDataStuffTests */,
 				8C55E8C018306EF6006CFAC9 /* Frameworks */,
@@ -192,6 +185,7 @@
 		8C55E8CA18306EF6006CFAC9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C3CD74B18F839110010B4EF /* dataSet.json */,
 				8C55E8CB18306EF6006CFAC9 /* CoreDataStuff-Info.plist */,
 				8C55E8CC18306EF6006CFAC9 /* InfoPlist.strings */,
 				8C55E8CF18306EF6006CFAC9 /* main.m */,
@@ -298,6 +292,7 @@
 			files = (
 				8C55E8E218306EF6006CFAC9 /* Images.xcassets in Resources */,
 				8C55E8CE18306EF6006CFAC9 /* InfoPlist.strings in Resources */,
+				8C3CD74C18F839110010B4EF /* dataSet.json in Resources */,
 				8C55E8D718306EF6006CFAC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +318,6 @@
 				8C55E9011830711C006CFAC9 /* RMMFirstViewViewController.m in Sources */,
 				8C55E8DA18306EF6006CFAC9 /* CoreDataStuff.xcdatamodeld in Sources */,
 				8C55E9041830712B006CFAC9 /* RMMSecondViewController.m in Sources */,
-				8C4430AC1835D14F0091A571 /* Event.m in Sources */,
 				8C3CD74118F7CC9A0010B4EF /* RMMCoreDataStack.m in Sources */,
 				8C3CD74A18F7E62F0010B4EF /* RMMPerson.m in Sources */,
 			);

@@ -8,8 +8,7 @@
 
 #import "RMMFirstViewViewController.h"
 #import "RMMSecondViewController.h"
-#import "RMMAppDelegate.h"
-#import "Event.h"
+#import "RMMPerson.h"
 
 @interface RMMFirstViewViewController ()
 
@@ -19,38 +18,13 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    RMMAppDelegate *appDelegate = (RMMAppDelegate *)[[UIApplication sharedApplication]delegate];
-    self.context = [appDelegate managedObjectContext];
-    
+    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:[RMMPerson entityName]];
+    NSArray *coreDataList = [self.context executeFetchRequest:req error:nil];
+    NSLog(@" Elemento en CoreData: %lu", [coreDataList count]);
+
+    self.personasCount.text = [NSString stringWithFormat:@"%lu", [coreDataList count]];
 }
 
-
-
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([self.nameText.text isEqualToString:@""]) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Name"
-                                                        message:@"Name empty is not valid"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        return NO;
-    }else{
-        return YES;
-    }
-}
-
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   
-    Event *event = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.context];
-    event.name = self.nameText.text;
-  
-    [[segue destinationViewController] setEvent:event];
-    [[segue destinationViewController] setContext:self.context];
-    
-}
 
 
 @end

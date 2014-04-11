@@ -6,6 +6,7 @@
 //
 
 #import "RMMCoreDataStack.h"
+#import "RMMPerson.h"
 
 @interface RMMCoreDataStack ()
 
@@ -196,51 +197,5 @@
     
     return results;
 }
-
-- (void)loadInittialData {
-    //https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/Articles/cdImporting.html
-    
-    //Crear otro NSManagedObjectContext distinto al habitual
-    NSManagedObjectContext *importContext = [[NSManagedObjectContext alloc] init];
-    NSPersistentStoreCoordinator *coordinator = [self storeCoordinator];
-    [importContext setPersistentStoreCoordinator:coordinator];
-    //Desactivar UndoManager
-    [importContext setUndoManager:nil];
-    
-    NSString *listOfIDsAsString = nil;
-    // Una array ordenada de los datos a insertar
-    // get the names to parse in sorted order
-    NSArray *employeeIDs = [[listOfIDsAsString componentsSeparatedByString:@"\n"] sortedArrayUsingSelector: @selector(compare:)];
-    
-    //Crear un predicado usando IN
-    // Create the fetch request to get all Employees matching the IDs.
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:[NSEntityDescription entityForName:@"Employee" inManagedObjectContext:importContext]];
-    [fetchRequest setPredicate: [NSPredicate predicateWithFormat:@"(employeeID IN %@)", employeeIDs]];
-    
-    // make sure the results are sorted as well
-    [fetchRequest setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey: @"employeeID" ascending:YES]]];
-    
-    //Ejecutar la consulta
-    NSError *error;
-    NSArray *employeesMatchingNames = [importContext executeFetchRequest:fetchRequest error:&error];
-    
-    
-    
-    
-    
-    //Otro ejemplo
-    
-    NSError* err = nil;
-    NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"Banks" ofType:@"json"];
-    NSArray* Banks = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
-                                                     options:kNilOptions
-                                                       error:&err];
-    NSLog(@"Imported Banks: %@", Banks);
-    
-    
-    
-}
-
 
 @end
